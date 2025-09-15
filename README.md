@@ -19,7 +19,9 @@ Este projeto tem como objetivo praticar uso da autenticação do Laravel Fortify
 - Cadastro de usuários
 - Login e Logout
 - Recuperação de senha via e-mail
-- Confirmação de e-mail
+- Validação de Formulário
+- Validação de Rotas User Autenticado 
+- Rota Publica para User Não Autenticado
 
 ## 🚀 Tecnologias Utilizadas
 - Laravel 12
@@ -45,3 +47,27 @@ Este projeto tem como objetivo praticar uso da autenticação do Laravel Fortify
  - composer require lucascudo/laravel-pt-br-localization --dev
  - php artisan vendor:publish --tag=laravel-pt-br-localization
 
+
+### Tela de Login 
+
+![alt text](image.png)
+
+### Tela de Cadastro
+
+![alt text](image-1.png)
+
+## Tela Enviar Email Para Recuperação de Senha
+
+![alt text](image-2.png)
+
+- Após enviar o Email
+
+![alt text](image-3.png)
+
+## Tela Alterar Senha
+
+![alt text](image-4.png)
+
+- Validação de Senha
+
+![alt text](image-5.png)
