@@ -15,6 +15,20 @@ Este projeto tem como objetivo praticar uso da autenticação do Laravel Fortify
 
 ```
 
+### O intuito é servir como base para outros projetos em Laravel que necessitem de:
+- Cadastro de usuários
+- Login e Logout
+- Recuperação de senha via e-mail
+- Confirmação de e-mail
+
+## 🚀 Tecnologias Utilizadas
+- Laravel 12
+- Laravel Fortify
+- PHP 8.2+
+- Composer
+- PostgreSQL
+- Bootstrap 5.3
+
 ### Instalações
 
 * Instalação do Laravel Fortify
