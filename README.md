@@ -23,7 +23,7 @@ Este projeto tem como objetivo praticar uso da autenticação do Laravel Fortify
  - php artisan fortify:install
  - php artisan migrate
 
- * Traduzir projeto para Portugues no laravel
+ ### Traduzir projeto para Portugues no laravel
 
  - https://github.com/lucascudo/laravel-pt-BR-localization
 
