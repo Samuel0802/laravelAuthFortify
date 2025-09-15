@@ -13,7 +13,7 @@ class CreateNewUser implements CreatesNewUsers
     use PasswordValidationRules;
 
     /**
-     * Validate and create a newly registered user.
+     * Regras de validação login e Registrar
      *
      * @param  array<string, string>  $input
      */
@@ -28,8 +28,21 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
-            'password' => $this->passwordRules(),
-        ])->validate();
+            'password' => ['required', 'string', 'min:6' , 'confirmed'],
+        ],
+        //Errors messages feedbacks para user
+        [
+          'name.required' => 'O Campo Nome é obrigatório',
+          'name.string' => 'O Campo Nome tem que ser um texto',
+          'name.max' => 'O Campo Nome deve ter no máximo 255 caracteres',
+          'email.required' => 'O Campo Email é obrigatório',
+          'email.unique' => 'Email já cadastrado',
+          'password.required' => 'O Campo Senha é obrigatório',
+          'password.min' => 'A senha deve ter no mínimo 6 caracteres',
+          'password.confirmed' => 'As senhas não conferem'
+        ]
+
+        )->validate();
 
         return User::create([
             'name' => $input['name'],

@@ -12,7 +12,7 @@
                         <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="email">Usuário</label>
+                        <label for="email">Email</label>
                         <input type="mail" name="email" id="email" class="form-control"
                             value="{{ old('email') }}">
                     </div>
