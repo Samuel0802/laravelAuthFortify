@@ -7,8 +7,33 @@
                 <p class="display-6">{{ env('APP_NAME') }}</p>
             </div>
             <div class="col d-flex justify-content-end align-items-center gap-5 p-3">
-                <span>Usuário: <strong class="text-info">[usuário]</strong></span>
-                <a href="#" class="btn btn-primary">Logout</a>
+                <span>Usuário: <strong class="text-info">
+                    @auth
+                         {{ Auth::user()->name }}
+
+                         @else
+
+                          Usuário não autenticado
+
+                    @endauth
+
+                     <span class="ms-3 opacity-50">
+                        @auth
+                             ({{  Auth::user()->email }})
+
+                             @else
+
+                             Sem E-mail cadastrado
+
+                        @endauth
+
+                    </span>
+                     </strong></span>
+
+                <form action="{{ route('logout') }}" method="POST">
+                     @csrf
+                     <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
             </div>
         </div>
     </div>
@@ -18,6 +43,10 @@
             <div class="col text-center">
 
                 <span class="display-3">PÁGINA INICIAL</span>
+
+                <hr>
+
+                <a href="{{  route('contato') }}">VER A PÁGINA DE CONTATOS</a>
 
             </div>
         </div>
