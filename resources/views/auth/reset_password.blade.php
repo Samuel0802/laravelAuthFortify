@@ -1,37 +1,41 @@
 @extends('layouts.main_layout')
 @section('content')
-
- <div class="container mt-5">
+    <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-md-5 card p-5">
-                <form action="{{ route('login') }}" method="post">
+                <form action="{{ route('password.update') }}" method="post">
                     @csrf
-                    <p class="display-6 text-center">LOGIN</p>
+
+                    <p class="display-6 text-center">REDEFINIR SENHA</p>
+
+                    <input type="hidden" name="token" id="token" value="{{ $request->route('token') }}"/>
+
                     <div class="mb-3">
-                        <label for="email">Usuário</label>
-                        <input type="email" name="email" id="email" class="form-control">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control"
+                            value="{{ old('email', request()->query('email')) }}" readonly>
                     </div>
                     <div class="mb-3">
-                        <label for="password">Senha</label>
+                        <label for="password">Nova Senha</label>
                         <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password_confirmation">Confirmação da senha</label>
+                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
                     </div>
 
                     <div class="mt-4 d-flex justify-content-between">
                         <div>
-                            <a href="{{ route('register') }}">Ainda não tem conta?</a>
-                        </div>
-
-                        <div>
-                            <a href="{{ route('password.request') }}">Esqueci Minha Senha</a>
+                            <a href="{{ route('login') }}">Login</a>
                         </div>
 
                         <div class="text-end">
-                            <button type="submit" class="btn btn-secondary px-5">LOGIN</button>
+                            <button type="submit" class="btn btn-secondary px-5">Redefinir Senha</button>
                         </div>
                     </div>
                 </form>
 
-                  {{-- errors --}}
+                {{-- errors --}}
                 @if ($errors->any())
                     <div class="alert alert-danger mt-4">
                         <ul class="m-0">
@@ -43,8 +47,8 @@
                         </ul>
                     </div>
                 @endif
+
             </div>
         </div>
     </div>
-
 @endsection
